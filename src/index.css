@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.headerFooter {
+  text-align: center;
+  color: green;
+  font-style: oblique;
+}
+
+
+button {
+  background: rgb(28, 184, 65);
+  color: white;
+  text-align: center;
+}
