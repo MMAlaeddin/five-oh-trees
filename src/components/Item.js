@@ -7,7 +7,7 @@ function Item(props){
   
   return (
     <React.Fragment>
-      <div onClick = {() => props.whenTicketClicked(props.id)}>
+      <div onClick = {() => props.whenItemClicked(props.id)}>
       <h3>{props.name}</h3>
       <h5>{props.category}</h5>
       <h5>{props.size}</h5>
@@ -21,7 +21,9 @@ Item.propTypes = {
   name: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
-  quantity: PropTypes.int
+  quantity: PropTypes.int,
+  id: PropTypes.string,
+  whenItemClicked: PropTypes.func
 };
 
 export default Item; 

@@ -17,8 +17,10 @@ function ItemList(props) {
   );
 }
 
+//assign strict data types ro all of our properties 
 ItemList.propTypes = {
-  itemList: PropTypes.array
+  itemList: PropTypes.array,
+  onItemSelection: PropTypes.func
 };
 
 export default ItemList; 
