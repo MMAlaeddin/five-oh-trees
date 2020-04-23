@@ -31,10 +31,14 @@ class ItemControl extends React.Component {
     this.setState({selectedItem: null});
   }
 
+  //filter the previous version of the item out of the list with filter()
+  //then add the dited version of the item to the list with concat()
+  //concat() copies the array and adds to the end of the array 
   handleEditingItemInList = (itemToEdit) => {
     const editedMasterItemList = this.state.masterItemList
       .filter(item => item.id !== this.state.selectedItem.id)
       .concat(itemToEdit);
+    // we set masterItemList to be equal to the list with the updated list
     this.setState({masterItemList: editedMasterItemList});
     this.setState({editing: false});
     this.setState({selectedItem: null});
