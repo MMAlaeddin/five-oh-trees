@@ -8,10 +8,11 @@ function ItemList(props) {
       <hr/>
       {props.itemList.map((item) => 
       <Item
-        category={item.category}
-        name={item.name}
-        size={item.size}
-        quantity={item.quantity} />)}
+        category={item.category} //category = prop
+        name={item.name} //name = prop
+        size={item.size} //size = prop
+        quantity={item.quantity} //quantity = prop
+        />)} 
     </React.Fragment>
   );
 }
