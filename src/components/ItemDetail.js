@@ -10,7 +10,9 @@ function ItemDetail(props){
       <h3>{item.name} - {item.category}</h3>
       <p><em>{item.size}</em></p>
       <p><em>{item.quantity}</em></p>
+      <button onClick={ props.onClickingEdit }>Update Item</button>
       <button onClick={() => onClickingDelete(item.id) }>Close Item</button>{}
+      
       <hr/>
       </React.Fragment>
   );

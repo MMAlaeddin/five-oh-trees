@@ -21,7 +21,7 @@ Item.propTypes = {
   name: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   size: PropTypes.string.isRequired,
-  quantity: PropTypes.int,
+  quantity: PropTypes.number,
   id: PropTypes.string,
   whenItemClicked: PropTypes.func
 };

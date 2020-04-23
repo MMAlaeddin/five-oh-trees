@@ -2,6 +2,7 @@ import React from "react";
 import NewItemForm from "./NewItemForm";
 import ItemList from "./ItemList";
 import EditItemForm from './EditItemForm';
+import ItemDetail from './ItemDetail';
 
 
 class ItemControl extends React.Component {
@@ -13,6 +14,7 @@ class ItemControl extends React.Component {
       selectedItem: null,
       editing: false
     };
+  }
     
   handleAddingNewItemToList = (newItem)  => {
     const newMasterItemList = this.state.masterItemList.concat(newItem);
@@ -21,7 +23,7 @@ class ItemControl extends React.Component {
   }
 
   handleChangingSelectedItem = (id) => {
-    const selectedItem = this.state.masterItemList.filter(item => Item.id === id)[0];
+    const selectedItem = this.state.masterItemList.filter(item => item.id === id)[0];
     this.setState({selectedItem: selectedItem});
   }
 
@@ -48,8 +50,7 @@ class ItemControl extends React.Component {
     console.log("handleEditClick reached!");
     this.setState({editing: true});
   }       
-       
-  }
+      
 
   handleClick = () => {
     if (this.state.selectedItem != null) {
@@ -69,6 +70,7 @@ class ItemControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
     
+    // pass handleEditingItemInList as a prop to our EditItemForm component
     if (this.state.editing ) {      
       currentlyVisibleState = <EditItemForm item = {this.state.selectedItem} onEditItem = {this.handleEditingItemInList} />
       buttonText = "Return to Item List";
@@ -85,9 +87,8 @@ class ItemControl extends React.Component {
       buttonText = "Add Item";
     }
     return (
-      <React.Fragment>
+      <React.Fragment> 
         {currentlyVisibleState}
-        <button onClick={ props.onClickingEdit }>Update Item</button>
         <button onClick={this.handleClick}>{buttonText}</button>
       </React.Fragment>
     );

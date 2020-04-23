@@ -1,11 +1,12 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
-import ReusableForm from "prop-types";
+import PropTypes from "prop-types";
+import { v4 } from "uuid";
 
-function EditNewItem(props) {
+function EditItemForm(props) {
   const { item } = props; 
 
-  function handleEditItemFormSubmission(even) {
+  function handleEditItemFormSubmission(event) {
     event.preventDefault();
     props.onEditItem({name: event.target.name.value, category: event.target.category.value, size: event.target.size.value, quantity: event.target.quantity.value, id: v4()})
   }
